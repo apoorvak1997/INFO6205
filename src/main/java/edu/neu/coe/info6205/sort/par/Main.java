@@ -15,13 +15,13 @@ import java.util.concurrent.ForkJoinPool;
  * TODO tidy it up a bit.
  */
 public class Main {
-    public static int threadCount = 2;
+    public static int threadCount = 6;
     public static ForkJoinPool myPool = new ForkJoinPool(threadCount);
     public static void main(String[] args) {
         processArgs(args);
         System.out.println("Degree of parallelism: " + myPool.getParallelism());
         Random random = new Random();
-        int[] array = new int[000000];
+        int[] array = new int[16000000];
         ArrayList<Long> timeList = new ArrayList<>();
         for (int j = 0; j < 20; j++) {
             ParSort.cutoff = 400000 * (j + 1);
